@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - DocinhosLu&Le</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
@@ -43,7 +44,21 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"> </script>
     <script src="~/lib/jQuery-Mask-Plugin-master/src/jquery.mask.js" type="text/javascript" asp-append-version="true"></script>
+    <script>
+            $(document).ready(function() {
+            $('#table').DataTable( {
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ resultados por página",
+                    "zeroRecords": "Sem resultados para essa busca",
+                    "info": "Mostrando _PAGE_ de _PAGES_",
+                    "infoEmpty": "Sem resultados para essa busca",
+                    "infoFiltered": "(Mostrando _MAX_ de pedidos)"
+                }
+            } );
+        } );
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
