@@ -6,31 +6,36 @@
 
 <h1>@ViewData["Title"]</h1>
 
+<hr />
 <div>
-    <h4>Pedido</h4>
-    <hr />
     <div class="form-horizontal">
         <hr />
         <div class="form-group col-md-6">
-            <label asp-for="Description" class="col-md-2 control-label"></label>
+            <label asp-for="Description" class="col-md-6 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="Description" class="form-control" readonly />
             </div>
         </div>
         <div class="form-group col-md-6">
-            <label asp-for="DeliveryDate" class="col-md-2 control-label"></label>
+            <label asp-for="DeliveryDate" class="col-md-6 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="DeliveryDate" class="form-control" readonly />
             </div>
         </div>
         <div class="form-group col-md-6">
-            <label asp-for="Price" class="col-md-2 control-label"></label>
+            <label asp-for="Price" class="col-md-6 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="Price" class="form-control" readonly />
             </div>
         </div>
         <div class="form-group col-md-6">
-            <label asp-for="Client" class="col-md-2 control-label"></label>
+            <label asp-for="PaymentStatus" class="col-md-6 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PaymentStatus" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Client" class="col-md-6 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="Client.Name" class="form-control" readonly>
             </div>

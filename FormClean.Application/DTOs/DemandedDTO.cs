@@ -26,11 +26,17 @@ namespace FormClean.Application.DTOs
         [Display(Name="Preço")]
         public string Price { get; set; }
 
+        [Required(ErrorMessage = "O status de pagamento é obrigatório")]
+        [Display(Name = "Status De Pagamento")]
+        public string PaymentStatus { get; set; }
+
+
         [Required(ErrorMessage = "O nome do cliente é obrigatório, caso não saiba ainda o valor, informe o valor 1.")]
         [Display(Name = "Nome Cliente")]
         public int ClientId { get; set; }
 
         [Display(Name="Cliente")]
-        public virtual Client Client { get; set; }
+        public Client Client { get; set; }
+
     }
 }

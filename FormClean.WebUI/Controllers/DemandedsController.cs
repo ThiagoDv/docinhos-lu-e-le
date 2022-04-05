@@ -35,6 +35,7 @@ namespace FormClean.WebUI.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
+            ViewBag.ClientId = new SelectList(await _clientService.GetAllClients(), "Id", "Name");
             return View();
         }
 

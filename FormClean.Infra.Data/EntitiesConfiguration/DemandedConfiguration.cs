@@ -19,6 +19,10 @@ namespace FormClean.Infra.Data.EntitiesConfiguration
                 .HasColumnName("preco")
                 .IsRequired();
 
+            builder.Property(payment => payment.PaymentStatus)
+                .HasColumnName("status_pagamento")
+                .IsRequired();
+
             builder.Property(deliveryDate => deliveryDate.DeliveryDate)
                 .HasColumnName("data_entrega")
                 .IsRequired();
