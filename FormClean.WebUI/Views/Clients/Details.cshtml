@@ -1,0 +1,58 @@
+﻿@model FormClean.Application.DTOs.ClientDTO
+
+@{
+    ViewData["Title"] = "Detalhes do cliente";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group col-md-6">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Email" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Email" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Phone" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Phone" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Street" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Street" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="District" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="District" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="NumberStreet" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="NumberStreet" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+                <a asp-action="Index" class="btn btn-info">Voltar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
