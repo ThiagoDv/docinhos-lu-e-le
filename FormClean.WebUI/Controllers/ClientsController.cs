@@ -35,7 +35,7 @@ namespace FormClean.WebUI.Controllers
             if (ModelState.IsValid)
             {
                 await _clientService.Create(clientDto);
-                return RedirectToAction("Index");
+                return RedirectToAction("Create","Demandeds");
             }
             return View(clientDto);
         }

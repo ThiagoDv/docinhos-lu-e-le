@@ -23,6 +23,10 @@ namespace FormClean.Infra.Data.EntitiesConfiguration
                 .HasColumnName("status_pagamento")
                 .IsRequired();
 
+            builder.Property(demandedStatus => demandedStatus.DemandedStatus)
+                .HasColumnName("status_pedido")
+                .IsRequired();
+
             builder.Property(deliveryDate => deliveryDate.DeliveryDate)
                 .HasColumnName("data_entrega")
                 .IsRequired();

@@ -13,25 +13,31 @@
         <div class="form-group col-md-6">
             <label asp-for="Description" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Description" class="form-control" readonly/>
+                <input asp-for="Description" class="form-control" readonly />
             </div>
         </div>
         <div class="form-group col-md-6">
             <label asp-for="DeliveryDate" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="DeliveryDate" class="form-control" readonly/>
+                <input asp-for="DeliveryDate" class="form-control" readonly />
             </div>
         </div>
         <div class="form-group col-md-6">
             <label asp-for="Price" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Price" class="form-control" readonly/>
+                <input asp-for="Price" class="form-control" readonly />
             </div>
         </div>
         <div class="form-group col-md-6">
             <label asp-for="PaymentStatus" class="col-md-6 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="PaymentStatus" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="DemandedStatus" class="col-md-6 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DemandedStatus" class="form-control" readonly>
             </div>
         </div>
         <div class="form-group col-md-6">
@@ -43,7 +49,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Deletar" class="btn btn-danger" />
-                 <a asp-action="Index" class="btn btn-info">Voltar</a>
+                <a asp-action="Index" class="btn btn-info">Voltar</a>
             </div>
         </div>
     </div>

@@ -21,7 +21,7 @@
 </div>
 <br />
 <div class="panel panel-default">
-    <table id="table" class="table table-striped">
+    <table id="table" class="table table-striped cell-border">
         <thead>
             <tr>
                 <th>
@@ -46,17 +46,18 @@
                     </td>
                     <td></td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-warning">
-                            <span class="fas fa-edit">Editar</span>
-                        </a>
-
-                        <a asp-action="Details" asp-route-id="@item.Id" title="Details" class="btn btn-primary">
-                            <span class="fas fa-search">Detalhes</span>
-                        </a>
-
-                        <a asp-action="Delete" asp-route-id="@item.Id" title="Delete" class="btn btn-danger">
-                            <span class="fas fa-trash-alt">Deletar</span>
-                        </a>
+                        <div class="row">
+                            <div class="m-2">
+                                <a asp-action="Details" asp-route-id="@item.Id" title="Details" class="btn btn-primary">
+                                    <span class="fas fa-search">Detalhes</span>
+                                </a>
+                            </div>
+                            <div class="m-2">
+                                <a asp-action="Delete" asp-route-id="@item.Id" title="Delete" class="btn btn-danger">
+                                    <span class="fas fa-trash-alt">Deletar</span>
+                                </a>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             }
