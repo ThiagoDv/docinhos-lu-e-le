@@ -5,7 +5,7 @@
 }
 
 <div>
-    <h2>@ViewData["Title"]</h2>
+    <h2 id="titulo-create-demanded">@ViewData["Title"]</h2>
 </div>
 <hr />
 <div class="row">
@@ -21,74 +21,66 @@
 </div>
 <br />
 <div class="panel panel-default">
-    <table id="table" class="table table-striped cell-border">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Client)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DeliveryDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Price)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DeliveryLocation)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PaymentStatus)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DemandedStatus)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Client.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DeliveryDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Price)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DeliveryLocation)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PaymentStatus)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DemandedStatus)
-                    </td>
-                    <td>
-                        <div class="row">
-                            <div class="m-2">
-                                <a asp-action="Details" asp-route-id="@item.Id" title="Details" class="btn btn-primary">
-                                    <span class="fas fa-search">Detalhes</span>
-                                </a>
-                            </div>
-                            <div class="m-2">
-                                <a asp-action="Delete" asp-route-id="@item.Id" title="Delete" class="btn btn-danger">
-                                    <span class="fas fa-trash-alt">Deletar</span>
-                                </a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div id="form-create-demanded" class="container-fluid col-12">
+        <div class="row align-items-center gx-5">
+            <table id="table" class="table table-bordered cell-border">
+                <thead class="table-dark">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Client)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DeliveryDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PaymentStatus)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DemandedStatus)
+                        </th>
+                        <th>
+                            Ações
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Client.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DeliveryDate)
+                            </td>
+                            <td>
+                                R$ @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PaymentStatus)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DemandedStatus)
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a asp-action="Details" asp-route-id="@item.Id" title="Details" class="bi bi-search">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a asp-action="Delete" asp-route-id="@item.Id" title="Delete" class="bi bi-x-square">
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

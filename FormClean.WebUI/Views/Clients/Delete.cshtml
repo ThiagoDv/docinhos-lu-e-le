@@ -4,54 +4,73 @@
     ViewData["Title"] = "Deletar Cliente";
 }
 
-<h1>@ViewData["Title"]</h1>
-<hr />
-<form asp-action="Delete" method=post>
-    <input type="hidden" asp-for="Id" />
-    <div class="form-horizontal">
-        <hr />
-        <div class="form-group col-md-6">
-            <label asp-for="Name" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Name" class="form-control" readonly/>
-            </div>
+<div id="form-create-demanded" class="container col-12">
+    <div class="row align-items-center gx-5">
+        <div class="col-md-6 order-md-2">
+            <h2 id="titulo-create-demanded">@ViewData["Title"]</h2>
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-floating mb-3">
+                            <textarea asp-for="Name" class="form-control" placeholder=" Nome Completo " readonly></textarea>
+                            <label asp-for="Name"> Nome Completo </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input asp-for="Email" class="form-control" placeholder="Informe seu e-mail" readonly />
+                            <label asp-for="Email">Informe seu e-mail</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input asp-for="Phone" id="maskPhone" class="form-control" placeholder="Informe seu Telefone" readonly />
+                            <label asp-for="Phone">Informe seu Telefone</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5>Informe o endereço do cliente:</h5>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-floating mb-3">
+                            <input asp-for="Street" class="form-control" placeholder="Informe a Rua" readonly />
+                            <label asp-for="Street">Informe a Rua</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-floating mb-3">
+                            <input asp-for="NumberStreet" class="form-control" placeholder="Nº" readonly>
+                            <label asp-for="NumberStreet">Nº</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-floating mb-3">
+                            <input asp-for="District" class="form-control" placeholder="Informe o Bairro" readonly>
+                            <label asp-for="District">Informe o Bairro</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="button-action" class="row">
+                    <div class="col-md-6">
+                        <input type="submit" value="Deletar Cliente" class="btn btn-danger" />
+                    </div>
+                    <div class="col-md-6">
+                        <a asp-action="Index" class="btn btn-primary">Voltar</a>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="form-group col-md-6">
-            <label asp-for="Email" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Email" class="form-control" readonly/>
-            </div>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="Phone" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Phone" class="form-control" readonly/>
-            </div>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="Street" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Street" class="form-control" readonly />
-            </div>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="District" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="District" class="form-control" readonly />
-            </div>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="NumberStreet" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="NumberStreet" class="form-control" readonly />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Deletar" class="btn btn-danger" />
-                 <a asp-action="Index" class="btn btn-info">Voltar</a>
+        <div class="col-md-6 order-md-1">
+            <div class="col-12">
+                <img src="~/img/createClient.svg" alt="createClient" class="img-fluid">
             </div>
         </div>
     </div>
-</form>
-
+</div>

@@ -44,7 +44,7 @@ namespace FormClean.WebUI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Clients}/{action=Index}/{id?}");
+                    pattern: "{controller=Demandeds}/{action=Index}/{id?}");
             });
         }
     }

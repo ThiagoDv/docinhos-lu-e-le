@@ -4,87 +4,94 @@
     ViewData["Title"] = "Registre um novo Pedido";
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<hr />
-
-<form asp-action="Create" method=post>
-    <div class="form-horizontal">
-        <hr />
-        <div class="form-group col-md-6">
-            <label asp-for="Description" class="col-md-6 control-label"></label>
-            <div class="col-md-10">
-                <textarea asp-for="Description" class="form-control"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
+<div id="form-create-demanded" class="container col-12">
+    <div class="row align-items-center gx-5">
+        <div class="col-md-6 order-md-2">
+            <h2 id="titulo-create-demanded">@ViewData["Title"]</h2>
+            <form asp-action="Create" method="post">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-floating mb-3">
+                            <textarea asp-for="Description" class="form-control" placeholder=" Descrição "></textarea>
+                            <label asp-for="Description"> Descrição </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input asp-for="DeliveryDate" class="form-control" placeholder="Data da Entrega" />
+                            <label asp-for="DeliveryDate">Data da Entrega</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input asp-for="DeliveryLocation" class="form-control" placeholder="Local da Entrega" />
+                            <label asp-for="DeliveryLocation">Local da Entrega</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input asp-for="Price" id="maskPrice" class="form-control" placeholder="Preço" />
+                            <label asp-for="Price">Preço</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <select asp-for="PaymentStatus" class="form-control" placeholder="Status do Pagamento">
+                                <option value="default">--Selecione--</option>
+                                <option value="Em Aberto">Em Aberto</option>
+                                <option value="Parcialmente Pago">Parcialmente Pago</option>
+                                <option value="Totalmente Pago">Totalmente Pago</option>
+                            </select>
+                            <label asp-for="PaymentStatus">Status do Pagamento</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <select asp-for="ClientId" class="form-control" asp-items="ViewBag.ClientId" placeholder="Informe o Cliente">
+                                <option value="">--Selecione--</option>
+                            </select>
+                            <label asp-for="ClientId">Informe o Cliente</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <select asp-for="DemandedStatus" class="form-control" placeholder="Status do Pedido">
+                                <option value="Em Aberto">Em Aberto</option>
+                                <option value="Em Produção">Em Produção</option>
+                            </select>
+                            <label asp-for="DemandedStatus">Status do Pedido</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="button-action" class="row">
+                    <div class="col-md-6">
+                        <input type="submit" value="Cadastrar Pedido" class="btn btn-success" />
+                    </div>
+                    <div class="col-md-6">
+                        <a asp-action="Index" class="btn btn-danger">Cancelar</a>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="form-group col-md-6">
-            <label asp-for="DeliveryDate" class="col-md-6 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="DeliveryDate" class="form-control" />
-                <span asp-validation-for="DeliveryDate" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="DeliveryLocation" class="col-md-6 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="DeliveryLocation" class="form-control" />
-            </div>
-            <span asp-validation-for="DeliveryLocation" class="text-danger"></span>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="Price" class="col-md-6 control-label"></label>
-            <div class="col-md-10">
-                <input id="maskPrice" asp-for="Price" class="form-control" />
-            </div>
-            <span asp-validation-for="Price" class="text-danger"></span>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="PaymentStatus" class="col-md-6 control-label"></label>
-            <div class="col-md-10">
-                <select asp-for="PaymentStatus" class="form-control">
-                    <option value="default">--Selecione--</option>
-                    <option value="Em Aberto">Em Aberto</option>
-                    <option value="Parcialmente Pago">Parcialmente Pago</option>
-                    <option value="Totalmente Pago">Totalmente Pago</option>
-                </select>
-            </div>
-            <span asp-validation-for="PaymentStatus" class="text-danger"></span>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="DemandedStatus" class="col-md-6 control-label"></label>
-            <div class="col-md-10">
-                <select asp-for="DemandedStatus" class="form-control">
-                    <option value="default">--Selecione--</option>
-                    <option value="Em Aberto">Em Aberto</option>
-                    <option value="Em Produção">Em Produção</option>
-                    <option value="Entregue">Entregue</option>
-                </select>
-            </div>
-            <span asp-validation-for="PaymentStatus" class="text-danger"></span>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="ClientId" class="col-md-6 control-label"></label>
-            <div class="col-md-10">
-                <select asp-for="ClientId" class="form-control" asp-items="ViewBag.ClientId">
-                    <option value="">--Selecione--</option>
-                </select>
-            </div>
-            <span asp-validation-for="ClientId" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cadastrar Pedido" class="btn btn-success" />
-                <a asp-action="Index" class="btn btn-danger">Cancelar</a>
+        <div class="col-md-6 order-md-1">
+            <div class="col-12">
+                <img src="~/img/createDemanded.svg" alt="createDemanded" class="img-fluid">
             </div>
         </div>
     </div>
-</form>
+</div>
+
 
 @section Scripts {
-<script>
-    $('#maskPrice').mask('R$ 000.000.000.000.000,00', {reverse: true});
+    <script>
+        $('#maskPrice').mask('R$ 000.000.000.000.000,00', { reverse: true });
 
-    $('#maskPhone').mask('(00) 0 0000-0000');
-</script>
+        $('#maskPhone').mask('(00) 0 0000-0000');
+    </script>
 }

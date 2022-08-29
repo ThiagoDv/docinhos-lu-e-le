@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FormClean.Infra.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220404203144_FieldPriceChange")]
-    partial class FieldPriceChange
+    [Migration("20220827192855_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,11 +28,11 @@ namespace FormClean.Infra.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Adress")
+                    b.Property<string>("District")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)")
-                        .HasColumnName("endereco_cliente");
+                        .HasColumnName("bairro_cliente");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -46,11 +46,23 @@ namespace FormClean.Infra.Data.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("nome_cliente");
 
+                    b.Property<string>("NumberStreet")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("numero_endereco_cliente");
+
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("whatsapp");
+
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("rua_cliente");
 
                     b.HasKey("Id");
 
@@ -77,11 +89,21 @@ namespace FormClean.Infra.Data.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("endereco_entrega");
 
+                    b.Property<string>("DemandedStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("status_pedido");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)")
                         .HasColumnName("descricao");
+
+                    b.Property<string>("PaymentStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("status_pagamento");
 
                     b.Property<string>("Price")
                         .IsRequired()

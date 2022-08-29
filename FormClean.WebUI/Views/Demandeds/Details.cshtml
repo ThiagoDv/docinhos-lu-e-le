@@ -4,52 +4,82 @@
     ViewData["Title"] = "Detalhes do pedido";
 }
 
-<h1>@ViewData["Title"]</h1>
-
-<hr />
-<div>
-    <div class="form-horizontal">
-        <hr />
-        <div class="form-group col-md-6">
-            <label asp-for="Description" class="col-md-6 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Description" class="form-control" readonly />
-            </div>
+<div id="form-create-demanded" class="container col-12">
+    <div class="row align-items-center gx-5">
+        <div class="col-md-6 order-md-2">
+            <h2 id="titulo-create-demanded">@ViewData["Title"]</h2>
+            <form asp-action="Details" method="post">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-floating mb-3">
+                            <textarea asp-for="Description" class="form-control" placeholder=" Descrição " readonly></textarea>
+                            <label asp-for="Description"> Descrição </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input asp-for="DeliveryDate" class="form-control" placeholder="Data da Entrega" readonly />
+                            <label asp-for="DeliveryDate">Data da Entrega</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input asp-for="DeliveryLocation" class="form-control" placeholder="Local da Entrega" readonly />
+                            <label asp-for="DeliveryLocation">Local da Entrega</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input asp-for="Price" id="maskPrice" class="form-control" placeholder="Preço" readonly />
+                            <label asp-for="Price">Preço</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <select asp-for="PaymentStatus" class="form-control" placeholder="Status do Pagamento" readonly>
+                                <option value="default">--Selecione--</option>
+                                <option value="Em Aberto">Em Aberto</option>
+                                <option value="Parcialmente Pago">Parcialmente Pago</option>
+                                <option value="Totalmente Pago">Totalmente Pago</option>
+                            </select>
+                            <label asp-for="PaymentStatus">Status do Pagamento</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input asp-for="Client.Name" class="form-control" placeholder="Informe o Cliente" readonly>
+                            <label asp-for="Client">Cliente</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <select asp-for="DemandedStatus" class="form-control" placeholder="Status do Pedido" readonly>
+                                <option value="Em Aberto">Em Aberto</option>
+                                <option value="Em Produção">Em Produção</option>
+                            </select>
+                            <label asp-for="DemandedStatus">Status do Pedido</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="button-action-create-demanded" class="row">
+                    <div class="col-md-6">
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a asp-action="Index" class="btn btn-primary">Voltar</a>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="form-group col-md-6">
-            <label asp-for="DeliveryDate" class="col-md-6 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="DeliveryDate" class="form-control" readonly />
-            </div>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="Price" class="col-md-6 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Price" class="form-control" readonly />
-            </div>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="PaymentStatus" class="col-md-6 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="PaymentStatus" class="form-control" readonly>
-            </div>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="DemandedStatus" class="col-md-6 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="DemandedStatus" class="form-control" readonly>
-            </div>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="Client" class="col-md-6 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Client.Name" class="form-control" readonly>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
-                <a asp-action="Index" class="btn btn-info">Voltar</a>
+        <div class="col-md-6 order-md-1">
+            <div class="col-12">
+                <img src="~/img/detailsDemanded.svg" alt="detailsDemanded" class="img-fluid">
             </div>
         </div>
     </div>
