@@ -33,13 +33,16 @@
                             @Html.DisplayNameFor(model => model.DeliveryDate)
                         </th>
                         <th>
+                            @Html.DisplayNameFor(model => model.DemandedStatus)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
                             @Html.DisplayNameFor(model => model.Price)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.PaymentStatus)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DemandedStatus)
                         </th>
                         <th>
                             Ações
@@ -57,22 +60,25 @@
                                 @Html.DisplayFor(modelItem => item.DeliveryDate)
                             </td>
                             <td>
+                                @Html.DisplayFor(modelItem => item.DemandedStatus)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
                                 R$ @Html.DisplayFor(modelItem => item.Price)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.PaymentStatus)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.DemandedStatus)
-                            </td>
-                            <td>
-                                <div class="row">
+                                <div class="row align-items-center gx-5">
                                     <div class="col-md-6">
-                                        <a asp-action="Details" asp-route-id="@item.Id" title="Details" class="bi bi-search">
+                                        <a id="icon-detail" asp-action="Details" asp-route-id="@item.Id" title="Details" class="bi bi-search">
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <a asp-action="Delete" asp-route-id="@item.Id" title="Delete" class="bi bi-x-square">
+                                        <a id="icon-delete" asp-action="Delete" asp-route-id="@item.Id" title="Delete" class="bi bi-x-square">
                                         </a>
                                     </div>
                                 </div>

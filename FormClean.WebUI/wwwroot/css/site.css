@@ -1,4 +1,16 @@
 ﻿
+
+#icon-edit, #icon-detail, #icon-delete {
+    padding: 0;
+    color: black;
+}
+
+@media(min-width: 768px) {
+    #icon-edit, #icon-detail, #icon-delete {
+        width: auto;
+    }
+}
+
 #icon-clients {
     height: 90px;
 }

@@ -28,48 +28,50 @@
 </div>
 <br />
 <div class="panel panel-default">
-    <div id="form-create-demanded" class="container-fluid col-12">
+    <div id="form-create-demanded" class="container-sm">
         <div class="row align-items-center gx-5">
-            <table id="table" class="table table-bordered cell-border">
-                <thead class="table-dark">
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Name)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Phone)
-                        </th>
-                        <th>
-                            Ações
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
+            <div class="col-12">
+                <table id="table" class="table table-bordered cell-border display nowrap" cellspacing="0" width="100%">
+                    <thead class="table-dark">
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Phone)
-                            </td>
-                            <td>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a asp-action="Details" asp-route-id="@item.Id" title="Details" class="bi bi-search">
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a asp-action="Delete" asp-route-id="@item.Id" title="Delete" class="bi bi-x-square">
-                                        </a>
-                                    </div>
-                                </div>
-                            </td>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Phone)
+                            </th>
+                            <th>
+                                Ações
+                            </th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Phone)
+                                </td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a asp-action="Details" asp-route-id="@item.Id" title="Details" class="bi bi-search">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a asp-action="Delete" asp-route-id="@item.Id" title="Delete" class="bi bi-x-square">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
