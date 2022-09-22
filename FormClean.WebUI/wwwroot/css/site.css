@@ -1,14 +1,36 @@
 ﻿
 
-#icon-edit, #icon-detail, #icon-delete {
-    padding: 0;
-    color: black;
+/*#region Tela de verificação do cliente*/
+#titulo-verificacao, #btn-verifica-clientes, #btn-cadastrar-clientes {
+    text-align: center;
 }
+
+
+/*#endregion*/
+
+
+/*#region media para mobile first*/
 
 @media(min-width: 768px) {
     #icon-edit, #icon-detail, #icon-delete {
         width: auto;
     }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 60px;
+    }
+}
+
+/*#endregion*/
+
+
+#icon-edit, #icon-detail, #icon-delete {
+    padding: 0;
+    color: black;
 }
 
 #icon-clients {
@@ -18,19 +40,22 @@
 #logo-docinhos {
     height: 40px;
 }
+
+
 /*#region Botões de ação da tabela*/
 
 #table {
     text-align: center;
-    justify-content:center;
+    justify-content: center;
 }
 
-    #table thead tr th{
+    #table thead tr th {
         text-align: center;
         align-self: center;
     }
 
 /*#endregion*/
+
 /*#region Editar margem topo das imagens desk e mobile*/
 .img-fluid {
     margin-top: 30px;
@@ -160,12 +185,13 @@ body {
     margin-bottom: 60px;
 }
 
-/*.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;*/ /*Vertically center the text there */
-/*}*/
+
+
+footer {
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
 
 /*#endregion*/

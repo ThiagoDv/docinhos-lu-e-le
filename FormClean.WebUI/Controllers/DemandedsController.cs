@@ -27,9 +27,10 @@ namespace FormClean.WebUI.Controllers
         }
 
         [HttpGet]
-        public IActionResult VerifyClientExists() 
+        public async Task<IActionResult> VerifyClientExists() 
         {
-            return View();
+            var clients = await _clientService.GetAllClients();
+            return View(clients);
         }
 
         [HttpGet]

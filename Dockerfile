@@ -1,13 +1,14 @@
 
-# define a imagem base
-FROM debian:latest
-# define o mantenedor da imagem
-LABEL maintainer="Macoratti"
-# Atualiza a imagem com os pacotes
-RUN apt-get update && apt-get upgrade -y
-# Instala o NGINX para testar
-RUN apt-get install nginx -y
-# Expoe a porta 80
-EXPOSE 80
-# Comando para iniciar o NGINX no Container
-CMD ["nginx", "-g", "daemon off;"]
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env
+WORKDIR /app
+
+COPY *.csproj .
+RUN dotnet restore
+
+RUN dotnet publish -c Release -o out
+
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
+WORKDIR /app
+COPY --from=build-env /app/out .
+
+CMD ASPNETCORE_URLS="http://*:$PORT" dotnet FormClean.dll

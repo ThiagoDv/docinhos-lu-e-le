@@ -21,6 +21,7 @@
 </div>
 <br />
 <div class="panel panel-default">
+    <input type="button" class="btn btn-success" value="Exibir/Ocultar Pedidos Entregues" onclick="VerifyDemandedStatus()">
     <div id="form-create-demanded" class="container-fluid col-12">
         <div class="row align-items-center gx-5">
             <table id="table" class="table table-bordered cell-border">
@@ -32,7 +33,7 @@
                         <th>
                             @Html.DisplayNameFor(model => model.DeliveryDate)
                         </th>
-                        <th>
+                        <th id="demandedHead">
                             @Html.DisplayNameFor(model => model.DemandedStatus)
                         </th>
                         <th>
@@ -72,7 +73,7 @@
                                 @Html.DisplayFor(modelItem => item.PaymentStatus)
                             </td>
                             <td>
-                                <div class="row align-items-center gx-5">
+                                <div id="btns-acoes-index" class="row align-items-center gx-5">
                                     <div class="col-md-6">
                                         <a id="icon-detail" asp-action="Details" asp-route-id="@item.Id" title="Details" class="bi bi-search">
                                         </a>
@@ -90,3 +91,26 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        function VerifyDemandedStatus() {
+            alert('aaaa')
+                //var dadosPedido = document.getElementsById('demandedBody').innerText;
+                //var pedido = document.getElementById('demandedBody');
+                //confirm(dadosPedido);
+                //if (dadosPedido == "Entregue") {
+                //    //pedido.style.display = 'none';
+                //    return alert('opa');
+                //} else {
+                //    //pedido.style.display = 'block';
+                //    return alert('ih rapaiz')
+                //}
+            }
+    </script>
+    <script>
+        $('#maskPrice').mask('R$ 000.000.000.000.000,00', { reverse: true });
+
+        $('#maskPhone').mask('(00) 0 0000-0000');
+    </script>
+}
